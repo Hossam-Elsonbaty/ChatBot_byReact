@@ -1,0 +1,33 @@
+.landing-container{
+  @include flex(40px,center,center,column);
+  // padding: 0 20px;
+  h1{
+    font-size: 50px;
+    width: 520px;
+    text-align: center;
+    color:#000000cf;
+    @include breakpoint(mobile){
+      font-size: 35px;
+      width: 400px;  
+    }
+  }
+  span{
+    text-align: center;
+    font-size: 18px;
+    @include breakpoint(mobile){
+      width: 400px;  
+    }
+  }
+  .start-trail{
+    // width: 150px;
+    background-color: rgb(66, 160, 232);
+    @include button();
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    transition: .3s;
+    &:hover{
+      transform: translateY(-3px);
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@use './static/scss/helpers/mixins'  as *;
+// import navbar style
+@import './static/scss/pages/navbar';
+// import colors style
+@import './static/scss/helpers/colors';
+// import home style
+@import './static/scss/pages/home';
+// import home style
+@import './static/scss/pages/plans';
+// import landing style
+@import './static/scss/pages/landing';
+// import landing style
+@import './static/scss/pages/footer';
+
+
+* {
+  margin :0;
+  box-sizing: border-box;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif;
+  // font-family: 'Cairo', sans-serif;
+  // font-family: 'Open Sans', sans-serif;
+  // font-family: 'Titillium Web', sans-serif;
+}

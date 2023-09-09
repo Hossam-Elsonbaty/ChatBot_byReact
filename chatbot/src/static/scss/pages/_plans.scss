@@ -1,0 +1,60 @@
+@import './../helpers/colors';
+.plans{
+  padding: 20px;
+  .plan-cart{
+    background-color: antiquewhite;
+    padding: 10px 30px;
+    border-radius: 4px;
+    min-width: 350px;
+    @include breakpoint(mobile){
+      min-width: 350px;
+    }
+    @include flex (0px, center,center,column);
+    .top-section{
+      @include flex(10px,center,center,column);
+      margin-bottom: 20px;
+      .header{
+        background-color: $black_color;
+        padding: 2px 10px;
+        width: 90px;
+        color: $white_color;
+        text-align: center;
+        border-radius: 5px
+      }
+      .price-container {
+        @include flex(20px, center,center,column);
+        .price{
+          @include flex(0px,center,center,row);
+          font-weight: 600;
+          span{
+            &:first-child{
+              align-self: flex-start;
+            }
+            &:last-child{
+              align-self: flex-end;
+            }
+            &:nth-child(2){
+              font-size: 50px;
+            }
+          }
+        }
+      }
+    }
+    .bottom-section{
+      padding-top: 20px;
+      border-top: 1px solid #00000056;
+      width: 100%;
+      .details{
+        @include flex(10px,center,flex-start,column);
+        span{
+          @include flex(10px,center,center,row);
+          color: #0000009d;
+          i{
+            color: $black_color;
+            font-weight:600;
+          }
+        }
+      }
+    }
+  }
+}
