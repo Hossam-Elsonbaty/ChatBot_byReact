@@ -11,8 +11,13 @@
 @import './static/scss/pages/landing';
 // import landing style
 @import './static/scss/pages/footer';
+// import channelType style
+@import './static/scss/pages/channelType';
+// import channelInfo style
+@import './static/scss/pages/channelInfo';
 
-
+// @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Mukta:wght@300&family=Open+Sans:wght@300;400;500;600;700&family=Titillium+Web:wght@200;300;400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Mukta:wght@300&family=Open+Sans:wght@300;400;500;600;700&family=Titillium+Web:wght@200;300;400;600&family=Ubuntu:wght@300;400;500;700&display=swap');
 * {
   margin :0;
   box-sizing: border-box;

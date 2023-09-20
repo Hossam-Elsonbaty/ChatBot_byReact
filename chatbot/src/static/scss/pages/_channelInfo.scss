@@ -1,0 +1,92 @@
+@import '../helpers/colors';
+.ChannelI-container{
+  height: 100vh;
+  @include flex(0px,flex-start,flex-start,row);
+  .left-section{
+    padding: 25px 0 0 0 ;
+    width: 40%;
+    height: 100%;
+    background-color: rgb(239, 240, 240);
+    @include flex(75px,flex-start,center,column);
+    .logo{
+      width: 50px;
+      align-self: flex-start;
+      margin-left: 25px;
+    }
+    .col{
+      @include flex(15px,space-between,flex-start,column);
+      h2{
+        font-size: 50px;
+        width: 350px;
+      }
+      .illstration{
+        width: 220px;
+      }
+      span{
+        color: rgba(0, 0, 0, 0.542);
+      }
+    }
+  }
+  .right-section{
+    padding: 25px 0 0 0 ;
+    width: 60%;
+    height: 100%;
+    @include flex(95px,flex-start,center,column);
+    header{
+      width: 100%;
+      @include flex(0px,flex-end,center,row);
+      padding-right: 20px;
+      .sign-in{
+        padding: 15px 10px;
+        width: 100px;
+        font-size: 15px;
+        font-weight: 600;
+        @include button();
+        background-color: transparent;
+        border-radius: 25px;
+        border: 2px solid #387fdb;
+      }
+    }
+    .channels{
+      @include flex(40px,center,center,column);
+      .form-header{
+        @include flex(20px,center,center,column);
+        .top{
+          @include flex(0px,center,center,row);
+          .logo{
+            width: 50px;
+          }
+          span{
+            font-weight: 600;
+            color: #000000a0;
+            font-size: 20px;
+          }
+        }
+        .label{
+          font-weight: 400;
+          color: #000000a0;
+          font-size: 25px;
+        }
+      }
+      form{
+        @include flex(20px,center,center,column);
+        input{
+          width: 350px;
+        }
+        .confirm{
+          @include button();
+          background-color: rgb(0, 149, 255);
+          padding: 12px;
+          width: 120px;
+          border-radius: 19px;
+          font-size: 16px;
+          color: #fff;
+          transition: .3s;
+          &:hover{
+            background-color: rgb(7, 109, 182);
+          }
+        }
+      }
+    }
+  }
+}

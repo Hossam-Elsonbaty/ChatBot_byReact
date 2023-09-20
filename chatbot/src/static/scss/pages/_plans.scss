@@ -2,9 +2,11 @@
 .plans{
   padding: 20px;
   .plan-cart{
-    background-color: antiquewhite;
+    // background-color: antiquewhite;
+    background-color: transparent;
+    border: 2px solid #00000070;
     padding: 10px 30px;
-    border-radius: 4px;
+    border-radius: 15px;
     min-width: 350px;
     @include breakpoint(mobile){
       min-width: 350px;
@@ -38,6 +40,23 @@
             }
           }
         }
+        .start-trail{
+          a{
+            width: 100%;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+          }
+          background-color: rgb(66, 160, 232);
+          @include button();
+          padding: 10px;
+          border-radius: 8px;
+          transition: .3s;
+          &:hover{
+            transform: translateY(-3px);
+          }
+        }
+      
       }
     }
     .bottom-section{
@@ -45,7 +64,7 @@
       border-top: 1px solid #00000056;
       width: 100%;
       .details{
-        @include flex(10px,center,flex-start,column);
+        @include flex(30px,center,flex-start,column);
         span{
           @include flex(10px,center,center,row);
           color: #0000009d;

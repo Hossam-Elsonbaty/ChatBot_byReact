@@ -23,11 +23,108 @@
 }
 footer{
   width: 100%;
-  .footer-container{
-    @include flex(15px, center, center,column);
-    .top-section{
-      @include flex(15px, space-between, center,row);
-      
+  background-color: rgb(255, 255, 255);
+  border-top: 1px solid #eee;
+  padding: 20px 0;
+  @include flex(15px,center,center,column);
+  .footer-top {
+    @include breakpoint(mobile){
+      @include flex(0,space-around,flex-start,row);
+    }
+    @include flex(0,space-around,center,row);
+    width: 100%;
+    .left{
+      @include breakpoint(mobile){
+        display: none;
+      }
+      img{
+        // @include breakpoint(mobile){
+        //   width: 0px;
+        //   display: none;
+        // }
+        width: 300px;
+      }
+    }
+    .right{
+      form{
+        @include flex(10px,center,flex-start,column);
+        .form-header{
+          width: 100%;
+          @include flex(0px, space-between,center,row);
+          h1{
+            color: rgba(0, 0, 0, 0.48);
+          }
+          .send{
+            @include breakpoint(mobile){
+              width: 80px;
+            }
+            @include button();
+            width: 120px;
+            padding: 12px 0;
+            background-color:#2b59a3 ;
+            color: #fff;
+            border-radius: 8px;
+            
+          }
+        }
+        .content{
+          @include flex(12px,center,flex-start,row);
+          @include breakpoint(mobile){
+            @include flex(10px,center,flex-start,column);
+          }  
+          .col{
+            @include breakpoint(mobile){
+              @include flex(10px,center,flex-start,column);
+            }    
+            @include flex(25px,center,flex-start,column);
+          }
+          .flex{
+            input{
+              padding: 15px 10px;
+            }
+            input,textarea{
+              background-color: rgb(231, 223, 223);
+              outline: none;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer-bottom{
+    width: 100%;
+    @include flex(15px,space-around,center,row);
+    .social{
+      ul{
+        list-style: none;
+        @include flex(15px,space-around,center,row);
+        li{
+          a{
+            text-decoration: none;
+            i{
+              @include breakpoint(mobile){
+                font-size:1rem;
+              }
+              color: rgb(34, 109, 175);
+              font-size:1.5rem;
+            }
+          }
+        }
+      }
+    }
+    .copy-right{
+      color: rgb(0, 0, 0);
+      cursor:default;
+      @include breakpoint (mobile){
+        font-size:.5rem;
+      }
+      a{
+        color: rgb(35, 65, 147);
+        cursor: pointer;
+        margin: 0 5px;
+        
+      }
     }
   }
 }

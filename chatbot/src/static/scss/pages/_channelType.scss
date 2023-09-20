@@ -1,0 +1,83 @@
+@import '../helpers/colors';
+
+.ChannelT-container{
+  height: 100vh;
+  @include flex(0px,flex-start,flex-start,row);
+  .left-section{
+    padding: 25px 0 0 0 ;
+    width: 40%;
+    height: 100%;
+    background-color: rgb(239, 240, 240);
+    @include flex(75px,flex-start,center,column);
+    .logo{
+      width: 50px;
+      align-self: flex-start;
+      margin-left: 25px;
+    }
+    .col{
+      @include flex(15px,space-between,flex-start,column);
+      h2{
+        font-size: 50px;
+        width: 350px;
+      }
+      .illstration{
+        width: 220px;
+      }
+      span{
+        color: rgba(0, 0, 0, 0.542);
+      }
+    }
+  }
+  .right-section{
+    padding: 25px 0 0 0 ;
+    width: 60%;
+    height: 100%;
+    @include flex(95px,flex-start,center,column);
+    header{
+      width: 100%;
+      @include flex(0px,flex-end,center,row);
+      padding-right: 20px;
+      .sign-in{
+        padding: 15px 10px;
+        width: 100px;
+        font-size: 15px;
+        font-weight: 600;
+        @include button();
+        background-color: transparent;
+        border-radius: 25px;
+        border: 2px solid #387fdb;
+      }
+    }
+    .channels{
+      @include flex(40px,center,center,column);
+      .col{
+        a{
+          @include flex(20px,center,center,row);
+          text-decoration: none;
+          padding: 25px 20px;
+          box-shadow: 0px 0px 11px 6px #0000001a;
+          border-radius: 8px;
+          transition: .3s;
+          cursor: pointer;
+          .social-logo{
+            width: 40px;
+          }
+          .content{
+            @include flex(10px,center,flex-start,column);
+            span{
+              width: 300px;
+              font-size: 13px;
+              color: #000;
+            }
+            h3{
+              color: #000;
+            }
+          }
+          &:hover{
+            box-shadow: 0px 0px 11px 6px #00000023;
+          }
+        }
+      }
+    }
+  }
+}

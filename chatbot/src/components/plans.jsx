@@ -1,6 +1,7 @@
-import React from 'react'
-import Bot from '../static/images/bot.png'
+import React from 'react';
+import Bot from '../static/images/bot.png';
 import 'primeicons/primeicons.css';
+import {NavLink} from 'react-router-dom';
 export default function Plans() {
   return (
     <>
@@ -21,6 +22,9 @@ export default function Plans() {
               </div>
               <span className='span1'>billed annually</span>
               <span className='span2'>or <span style={{'fontWeight':'600'}}>$65</span> month to month</span>
+              <button className='start-trail'>
+                <NavLink to='/create-channel'>Start your free trail</NavLink>
+              </button>
             </div>
           </div>
           <div className='bottom-section'>
