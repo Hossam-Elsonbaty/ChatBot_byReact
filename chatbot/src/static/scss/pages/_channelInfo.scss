@@ -37,14 +37,18 @@
       @include flex(0px,flex-end,center,row);
       padding-right: 20px;
       .sign-in{
-        padding: 15px 10px;
-        width: 100px;
-        font-size: 15px;
-        font-weight: 600;
         @include button();
         background-color: transparent;
-        border-radius: 25px;
-        border: 2px solid #387fdb;
+        a{
+          padding: 15px 10px;
+          min-width: 100px;
+          font-size: 15px;
+          font-weight: 600;
+          border-radius: 25px;
+          text-decoration: none;
+          color: #000;
+          border: 2px solid #387fdb;
+        }
       }
     }
     .channels{
@@ -74,17 +78,18 @@
           width: 350px;
         }
         .confirm{
-          @include button();
-          background-color: rgb(0, 149, 255);
-          padding: 12px;
-          width: 120px;
-          border-radius: 19px;
-          font-size: 16px;
-          color: #fff;
-          transition: .3s;
-          &:hover{
-            background-color: rgb(7, 109, 182);
+            text-decoration: none;
+            background-color: rgb(0, 149, 255);
+            padding: 12px;
+            min-width: 120px;
+            border-radius: 19px;
+            font-size: 16px;
+            color: #fff;
+            transition: .3s;
+            &:hover{
+              background-color: rgb(7, 109, 182);
           }
+          @include button();
         }
       }
     }

@@ -1,5 +1,6 @@
-import React from 'react'
-import img from '../static/images/botLogo.png'
+import React from 'react';
+import img from '../static/images/botLogo.png';
+import { NavLink } from 'react-router-dom';
 export default function Navbar() {
   return (
     <nav>
@@ -11,8 +12,8 @@ export default function Navbar() {
         
       </div>
       <div className='login-container'>
-        <button className='login-btn'>Log in</button>
-        <button className='sign-btn'>Sign up free</button>
+        <button className='login-btn'><NavLink to='/log-in'>LOGIN</NavLink></button>
+        <button className='sign-btn'><NavLink to='/sign-up'>Sign up free</NavLink></button>
       </div>
     </nav>
   )

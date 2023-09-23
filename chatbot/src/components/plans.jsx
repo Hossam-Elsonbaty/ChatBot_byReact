@@ -23,7 +23,7 @@ export default function Plans() {
               <span className='span1'>billed annually</span>
               <span className='span2'>or <span style={{'fontWeight':'600'}}>$65</span> month to month</span>
               <button className='start-trail'>
-                <NavLink to='/create-channel'>Start your free trail</NavLink>
+                <NavLink to='/log-in'>Start your free trail</NavLink>
               </button>
             </div>
           </div>

@@ -34,7 +34,7 @@ export default function ChannelType() {
               </NavLink>
             </div>
             <div className='col'>
-              <NavLink to='channel-details'>
+              <NavLink to='/create-channel/channel-details/0'>
                 <img className='social-logo' src={messenger} alt="" />
                 <div className='content'>
                   <h3>Facebook Messenger</h3>
