@@ -1,4 +1,9 @@
 @import '../helpers/colors';
+.p-organizationchart-node-content{
+  background-color: #f3f3f3 !important;
+  border-radius: 12px;
+  border: none !important;
+}
 .ChannelI-container{
   height: 100vh;
   @include flex(0px,flex-start,flex-start,row);

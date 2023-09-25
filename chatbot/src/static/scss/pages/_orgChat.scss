@@ -1,1 +1,33 @@
 @import '../helpers/colors';
+.p-menu{
+  top: 267px ;
+}
+.org-container{
+  @include flex(10px, center, center, row);
+  .dots{
+    button{
+      padding: 0;
+      margin:0 ;
+      background-color: transparent;
+      border: none;
+      color: #000;
+      outline: none;
+      &:hover{
+        background-color: transparent;
+        color: #000;
+        outline: none;
+      }
+      &:active{
+        background: transparent;
+        border-color: transparent;
+      }
+    }
+  }
+}
+.modal-container{
+  @include flex(15px, center, flex-start, column );
+  width: 100%;
+  input , textarea{
+    width: 100%;
+  }
+}
