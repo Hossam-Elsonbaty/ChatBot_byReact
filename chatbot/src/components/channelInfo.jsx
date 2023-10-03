@@ -7,6 +7,7 @@ import axios from 'axios';
 import { AuthContext } from './AuthContext';
 export default function ChannelInfo() {
   const [welcomeMessage, setWelcomeMessage] = useState(null)
+  const [appName, setAppName] = useState()
   const [access_token, setAccess_token] = useState()
   const [verification_token, setVerification_token] = useState()
   const [facebook_page_id, setFacebook_page_id] = useState()
@@ -20,6 +21,7 @@ export default function ChannelInfo() {
       app_type:appType.appType,
       user_fk:username.toString(),
       messenger:[{
+        appName,
         access_token,
         verification_token,
         facebook_page_id,
@@ -56,6 +58,13 @@ export default function ChannelInfo() {
               <span className='label'>Please fill these fields</span>
             </div>
             <form action="">
+              <div className="card flex justify-content-center">
+                <span className="p-float-label">
+                  <InputText id="username" value={appName} onChange={(e) => setAppName(e.target.value)} />
+                  <label htmlFor="username">App name</label>
+                </span>
+              </div>
+
               <div className="card flex justify-content-center">
                 <span className="p-float-label">
                   <InputText id="username" value={access_token} onChange={(e) => setAccess_token(e.target.value)} />

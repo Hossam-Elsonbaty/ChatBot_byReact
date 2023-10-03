@@ -1,0 +1,68 @@
+@import '../helpers/colors';
+.dashboard-container{
+  @include flex(80px, flex-start,flex-start,row );
+  height: 100vh;
+  .main-content{
+    width: 100%;
+    height: 100%;
+  }
+  nav{
+    background-color: rgb(9, 75, 116);
+    width: 3%;
+    height: 100%;
+    ul{
+      list-style: none;
+      @include flex(20px, flex-start,center,column );
+      height: 100%;
+      position: relative;
+      .user-setting{
+        position: absolute;
+        bottom: 2%;
+        padding: 15px 0;
+        i{
+          color: #b2b2b2;
+          font-size: 20px;
+          transition: .3s;
+          border: 2px solid #b2b2b2;
+          padding: 7px;
+          border-radius: 30px;
+          &:active{
+            border-color: #fff;
+            color: #ffffff;
+          }
+          &:hover{
+            border-color: #fff;
+          }
+        }
+      }
+      li{
+        @include flex(0px, center,center,row );
+        width: 100%;
+        cursor: pointer;
+        &:first-child{
+          background-color: rgb(37, 111, 180);
+        }
+        &:hover{
+          i{
+            color: #ffffff;
+          }
+        }
+        a{
+          text-decoration: none;
+          padding: 15px 0;
+          width: 100%;
+          text-align: center;
+          &.active{
+            border-left:3px solid rgb(37, 111, 180);
+            color: #ffffff;
+          }
+          i{
+            color: #b2b2b2;
+            font-size: 25px;
+            transition: .3s;
+          }
+        }
+      }
+    }
+  }
+}

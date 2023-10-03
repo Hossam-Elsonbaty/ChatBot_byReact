@@ -5,7 +5,7 @@ import Landing from './landing';
 import Footer from './footer';
 export default function Home() {
   return (
-    <main>
+    <main className='home-main'>
       <Navbar></Navbar>
       <Landing></Landing>
       <Plans></Plans>

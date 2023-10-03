@@ -8,16 +8,21 @@ import ChannelInfo from '../src/components/channelInfo';
 import OrgChat from '../src/components/orgChat';
 import SignUp from './components/signUp';
 import Login from './components/login';
+import Dashboard from './components/dashboard';
+import CreateBot from './components/createBot';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" exact element={<Home />} />
-        <Route path="/create-channel" exact element={<ChannelType />}/>
         <Route path="/sign-up" exact element={<SignUp />}/>
+        <Route path="/create-channel" exact element={<ChannelType />}/>
+        <Route path="/dashboard/:userId" exact element={<Dashboard />}>
+          <Route path="create-bot/:appType" exact element={<CreateBot />}/>
+        </Route>
         <Route path="/log-in" exact element={<Login />}/>
-        <Route path="/create-chatbot" exact element={<OrgChat />}/>
+        <Route path="/create-chatbot/:appType" exact element={<OrgChat />}/>
         <Route path="create-channel/channel-details/:appType" exact element={<ChannelInfo />}/>
       </Routes>
     </Router>

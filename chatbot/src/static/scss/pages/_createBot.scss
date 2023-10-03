@@ -1,0 +1,93 @@
+@import '../helpers/colors';
+
+.create-bot-container{
+  @include flex(20px, flex-start, flex-start,column);
+  width: 100%;
+  height: 100%;
+  padding-top: 80px;
+  .content{
+    width: 100%;
+    .col{
+      @include flex(30px, flex-start, flex-start,row);
+      flex-wrap: wrap;
+      .create-bot{
+        @include flex(10px, center, center,column);
+        background-color: rgb(38, 124, 211);
+        width: 250px;
+        height: 250px;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: .3s;
+        text-decoration: none;
+        color: #fff;
+        i{
+          font-size: 20px;
+        }
+        &:hover{
+          background-color: rgb(68, 148, 228);
+        }
+      }
+      .create-bot-skelton{
+        background-color: rgb(255, 255, 255);
+        @include flex(10px, flex-start, flex-start,column);
+        width: 250px;
+        height: 250px;
+        border: 1px solid #e1e1e1 ;
+        border-radius: 8px;
+        padding: 20px;
+      }
+      .added-bot{
+        background-color: rgb(255, 255, 255);
+        @include flex(20px, flex-start, flex-start,column);
+        width: 250px;
+        height: 250px;
+        cursor: pointer;
+        border: 1px solid #e1e1e1 ;
+        border-radius: 8px;
+        padding: 20px;
+        &:hover{
+          border-color: rgb(38, 96, 211);
+        }
+        div{
+          @include flex(20px, space-between, center,row);
+          width: 100%;
+          img{
+            width: 50px;
+          }
+          button{
+            @include button();
+            background-color: transparent;
+            i{
+              font-size: 18px;
+              color: #808080;
+            }
+          }
+        }
+        h4{
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+form{
+  @include flex(20px,center,center,column);
+  input{
+    width: 350px;
+  }
+  .confirm{
+      text-decoration: none;
+      background-color: rgb(0, 149, 255);
+      padding: 12px;
+      min-width: 120px;
+      border-radius: 19px;
+      font-size: 16px;
+      color: #fff;
+      transition: .3s;
+      &:hover{
+        background-color: rgb(7, 109, 182);
+    }
+    @include button();
+  }
+}

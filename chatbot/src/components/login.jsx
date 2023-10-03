@@ -1,4 +1,4 @@
-import React, {useState,useContext} from 'react';
+import React, {useState,useContext,useRef, useEffect} from 'react';
 import image1 from'../static/images/Illustration-PNG-Images.png';
 import logo from'../static/images/botLogo.png';
 import {NavLink , useNavigate} from 'react-router-dom';
@@ -6,20 +6,41 @@ import axios from'axios';
 import { InputText } from "primereact/inputtext";
 import { AuthContext } from './AuthContext';
 export default function Login() {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const { setUsername } = useContext(AuthContext);
-  const navigate = useNavigate()
-  const handleLogin = (e) =>{
+  const errRef = useRef();
+  const [email, setEmail] = useState('');
+  const [pwd, setPwd] = useState('');
+  const [errMsg, setErrMsg] = useState('');
+  const [success, setSuccess] = useState(false);
+  const { setAuth } = useContext(AuthContext);
+  const { auth } = useContext(AuthContext);
+  const navigate = useNavigate();
+  useEffect(()=>{
+    setErrMsg('')
+  },[email, pwd])
+  const handleLogin = async (e) =>{
     e.preventDefault();
-    axios.post(`http://127.0.0.1:8000/users/login-api`,{
+    await axios.post(`http://127.0.0.1:8000/users/login-api`,{
       email,
-      password
-    }).then((res)=>{
-      console.log(res.data);
-      setUsername(res.data.id);
-      res.request.status===202?navigate('/create-channel'):alert('error')
+      password:pwd
+    }).then((response)=>{
+      const userId  = response?.data?.id;
+      setAuth({email, pwd, userId})
+      setSuccess(true);
+      setEmail('')
+      setPwd('')
+      console.log(auth);
+      navigate(`/dashboard/${response?.data?.id}`)
     }).catch((error)=>{
+      if(!error?.response){
+        setErrMsg('No Server Response');
+      }else if (error.response?.status === 404){
+        setErrMsg('This Email Is Not Registered');
+      }else if (error.response?.status === 400){
+        setErrMsg('Incorrect Password');
+      }else{
+        setErrMsg('Login Failed')
+      }
+      errRef.current.focus();
       console.log(error)
     })
   }
@@ -44,18 +65,24 @@ export default function Login() {
                 <img className='logo' src={logo} alt="" />
                 <span>QuadraBot</span>
               </div>
-              <span className='label'>Create your free account</span>
+              <span className='label'>Please Fill these fields to login</span>
+              <span ref={errRef} className={errMsg?"errmsg":"offscreen"}>{errMsg}</span>
             </div>
-            <form action="">
+            <form onSubmit={(e)=>handleLogin(e)}>
               <div className="card flex justify-content-center">
                 <span className="p-float-label">
-                  <InputText id="username" type='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+                  <InputText id="username" type='email' 
+                    value={email} onChange={(e) => setEmail(e.target.value)} 
+                    autoComplete='off'
+                    required
+                  />
                   <label htmlFor="username">Business email</label>
                 </span>
               </div>
               <div className="card flex justify-content-center">
                 <span className="p-float-label">
-                  <InputText type='password' id="username" value={password} onChange={(e) => setPassword(e.target.value)} />
+                  <InputText type='password' id="username" required
+                    value={pwd} onChange={(e) => setPwd(e.target.value)} />
                   <label htmlFor="username">Password</label>
                 </span>
               </div>

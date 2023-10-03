@@ -2,8 +2,15 @@
 .p-menu{
   top: 267px ;
 }
+.p-organizationchart-node-content{
+  background-color: #f3f3f3 !important;
+  border-radius: 12px;
+  border: none !important;
+  box-shadow: 0 0 0 0 black;
+}
+
 .org-container{
-  @include flex(10px, center, center, row);
+  @include flex(0px, center, center, row);
   .dots{
     button{
       padding: 0;
@@ -25,9 +32,51 @@
   }
 }
 .modal-container{
-  @include flex(15px, center, flex-start, column );
+  @include flex(0px, center, flex-start, column );
   width: 100%;
-  input , textarea{
+  input{
     width: 100%;
+    &:first-child{
+      margin-bottom: 12px;
+    }
+  }
+  .respond{
+    border-radius: 10px 10px 0 0;
+    background-color: #f0f0f0;
+    border: none;
+    outline: none;
+    padding: 14px;
+    font-size: 15px
+  }
+  .add-button{
+    @include button();
+    width: 100%;
+    border: 2px dashed #e2e2e2;
+    padding: 12px 0;
+    border-radius: 0 0 10px 10px;
+    background-color: #fff;
+    color: #9f9f9f;
+    @include flex(5px, center, center, row );
+  }
+  .added-button{
+    width: 100%;
+    @include flex(0px, center, center, row );
+    margin-top: 5px;
+    background-color: #f0f0f0;
+    .respond{
+      border-radius: 0px 0px 0 0;
+      margin: 0;
+      &:focus{
+        border: none;
+        outline: none
+      }
+    }
+    .delete-button{
+      @include button();
+      margin-right: 18px;
+      i{
+        color: rgb(232, 61, 61);
+      }
+    }
   }
 }

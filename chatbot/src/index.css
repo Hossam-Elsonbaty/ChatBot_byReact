@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Mukta:wght@300&family=Open+Sans:wght@300;400;500;600;700&family=Titillium+Web:wght@200;300;400;600&family=Ubuntu:wght@300;400;500;700&display=swap");
-nav {
+.top-nav {
   width: 100%;
   height: 80px;
   background-color: #ffffff;
@@ -11,47 +11,47 @@ nav {
   padding: 0 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1490196078);
 }
-nav .logo-container {
+.top-nav .logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   gap: 0px;
 }
-nav .logo-container .logo {
+.top-nav .logo-container .logo {
   width: 50px;
 }
 @media (max-width: 767px) {
-  nav .logo-container .logo {
+  .top-nav .logo-container .logo {
     width: 40px;
   }
 }
-nav .logo-container .logo-name {
+.top-nav .logo-container .logo-name {
   margin-top: 8px;
   font-weight: 600;
   font-size: 30px;
   color: rgba(0, 0, 0, 0.7921568627);
 }
 @media (max-width: 767px) {
-  nav .logo-container .logo-name {
+  .top-nav .logo-container .logo-name {
     font-size: 20px;
   }
 }
-nav .login-container {
+.top-nav .login-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
   gap: 20px;
 }
-nav .login-container .login-btn {
+.top-nav .login-container .login-btn {
   background-color: transparent;
   outline: none;
   border: none;
   cursor: pointer;
   cursor: pointer;
 }
-nav .login-container .login-btn a {
+.top-nav .login-container .login-btn a {
   text-decoration: none;
   color: #000;
   border: 0.5px solid #000;
@@ -61,23 +61,23 @@ nav .login-container .login-btn a {
   padding: 8px;
   transition: 0.3s;
 }
-nav .login-container .login-btn a:hover {
+.top-nav .login-container .login-btn a:hover {
   background-color: #000000;
   color: #ffffff;
 }
 @media (max-width: 767px) {
-  nav .login-container .login-btn a {
+  .top-nav .login-container .login-btn a {
     font-size: 15px;
     width: 60px;
   }
 }
-nav .login-container .sign-btn {
+.top-nav .login-container .sign-btn {
   outline: none;
   border: none;
   cursor: pointer;
   cursor: pointer;
 }
-nav .login-container .sign-btn a {
+.top-nav .login-container .sign-btn a {
   text-decoration: none;
   padding: 8px;
   border: 1px solid transparent;
@@ -88,17 +88,17 @@ nav .login-container .sign-btn a {
   color: #fff;
   transition: 0.3s;
 }
-nav .login-container .sign-btn a:hover {
+.top-nav .login-container .sign-btn a:hover {
   background-color: rgb(22, 81, 126);
 }
 @media (max-width: 767px) {
-  nav .login-container .sign-btn a {
+  .top-nav .login-container .sign-btn a {
     font-size: 15px;
     width: 100px;
   }
 }
 
-main {
+.home-main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -540,12 +540,6 @@ footer .footer-bottom .copy-right a {
   box-shadow: 0px 0px 11px 6px rgba(0, 0, 0, 0.137254902);
 }
 
-.p-organizationchart-node-content {
-  background-color: #f3f3f3 !important;
-  border-radius: 12px;
-  border: none !important;
-}
-
 .ChannelI-container {
   height: 100vh;
   display: flex;
@@ -687,12 +681,19 @@ footer .footer-bottom .copy-right a {
   top: 267px;
 }
 
+.p-organizationchart-node-content {
+  background-color: #f3f3f3 !important;
+  border-radius: 12px;
+  border: none !important;
+  box-shadow: 0 0 0 0 black;
+}
+
 .org-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  gap: 10px;
+  gap: 0px;
 }
 .org-container .dots button {
   padding: 0;
@@ -717,11 +718,291 @@ footer .footer-bottom .copy-right a {
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  gap: 15px;
+  gap: 0px;
   width: 100%;
 }
-.modal-container input, .modal-container textarea {
+.modal-container input {
   width: 100%;
+}
+.modal-container input:first-child {
+  margin-bottom: 12px;
+}
+.modal-container .respond {
+  border-radius: 10px 10px 0 0;
+  background-color: #f0f0f0;
+  border: none;
+  outline: none;
+  padding: 14px;
+  font-size: 15px;
+}
+.modal-container .add-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border: 2px dashed #e2e2e2;
+  padding: 12px 0;
+  border-radius: 0 0 10px 10px;
+  background-color: #fff;
+  color: #9f9f9f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 5px;
+}
+.modal-container .added-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0px;
+  margin-top: 5px;
+  background-color: #f0f0f0;
+}
+.modal-container .added-button .respond {
+  border-radius: 0px 0px 0 0;
+  margin: 0;
+}
+.modal-container .added-button .respond:focus {
+  border: none;
+  outline: none;
+}
+.modal-container .added-button .delete-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 18px;
+}
+.modal-container .added-button .delete-button i {
+  color: rgb(232, 61, 61);
+}
+
+.dashboard-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  gap: 80px;
+  height: 100vh;
+}
+.dashboard-container .main-content {
+  width: 100%;
+  height: 100%;
+}
+.dashboard-container nav {
+  background-color: rgb(9, 75, 116);
+  width: 3%;
+  height: 100%;
+}
+.dashboard-container nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  position: relative;
+}
+.dashboard-container nav ul .user-setting {
+  position: absolute;
+  bottom: 2%;
+  padding: 15px 0;
+}
+.dashboard-container nav ul .user-setting i {
+  color: #b2b2b2;
+  font-size: 20px;
+  transition: 0.3s;
+  border: 2px solid #b2b2b2;
+  padding: 7px;
+  border-radius: 30px;
+}
+.dashboard-container nav ul .user-setting i:active {
+  border-color: #fff;
+  color: #ffffff;
+}
+.dashboard-container nav ul .user-setting i:hover {
+  border-color: #fff;
+}
+.dashboard-container nav ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0px;
+  width: 100%;
+  cursor: pointer;
+}
+.dashboard-container nav ul li:first-child {
+  background-color: rgb(37, 111, 180);
+}
+.dashboard-container nav ul li:hover i {
+  color: #ffffff;
+}
+.dashboard-container nav ul li a {
+  text-decoration: none;
+  padding: 15px 0;
+  width: 100%;
+  text-align: center;
+}
+.dashboard-container nav ul li a.active {
+  border-left: 3px solid rgb(37, 111, 180);
+  color: #ffffff;
+}
+.dashboard-container nav ul li a i {
+  color: #b2b2b2;
+  font-size: 25px;
+  transition: 0.3s;
+}
+
+.create-bot-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+  padding-top: 80px;
+}
+.create-bot-container .content {
+  width: 100%;
+}
+.create-bot-container .content .col {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.create-bot-container .content .col .create-bot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgb(38, 124, 211);
+  width: 250px;
+  height: 250px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.3s;
+  text-decoration: none;
+  color: #fff;
+}
+.create-bot-container .content .col .create-bot i {
+  font-size: 20px;
+}
+.create-bot-container .content .col .create-bot:hover {
+  background-color: rgb(68, 148, 228);
+}
+.create-bot-container .content .col .create-bot-skelton {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  width: 250px;
+  height: 250px;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  padding: 20px;
+}
+.create-bot-container .content .col .added-bot {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  width: 250px;
+  height: 250px;
+  cursor: pointer;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  padding: 20px;
+}
+.create-bot-container .content .col .added-bot:hover {
+  border-color: rgb(38, 96, 211);
+}
+.create-bot-container .content .col .added-bot div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+}
+.create-bot-container .content .col .added-bot div img {
+  width: 50px;
+}
+.create-bot-container .content .col .added-bot div button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+.create-bot-container .content .col .added-bot div button i {
+  font-size: 18px;
+  color: #808080;
+}
+.create-bot-container .content .col .added-bot h4 {
+  font-size: 18px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+form input {
+  width: 350px;
+}
+form .confirm {
+  text-decoration: none;
+  background-color: rgb(0, 149, 255);
+  padding: 12px;
+  min-width: 120px;
+  border-radius: 19px;
+  font-size: 16px;
+  color: #fff;
+  transition: 0.3s;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+form .confirm:hover {
+  background-color: rgb(7, 109, 182);
+}
+
+.signUP-form .input-cont .instructions {
+  margin-top: 5px;
+  width: 350px;
+  background-color: black;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 5px;
+}
+.signUP-form .input-cont .instructions .pi-info {
+  border: 1px solid #fff;
+  border-radius: 10px;
+  padding: 3px;
+  font-size: 10px;
+  margin-right: 2px;
+}
+.signUP-form .input-cont .offscreen {
+  display: none;
+}
+.signUP-form .input-cont .confirm:disabled {
+  background-color: antiquewhite;
 }
 
 * {

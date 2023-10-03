@@ -3,7 +3,7 @@ import img from '../static/images/botLogo.png';
 import { NavLink } from 'react-router-dom';
 export default function Navbar() {
   return (
-    <nav>
+    <nav className='top-nav'>
       <div className='logo-container'>
         <img src={img} alt="" className='logo' />
         <span className='logo-name'>QuadraBot</span>
